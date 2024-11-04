@@ -98,6 +98,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter emit,
   ) async {
     await FireAuthService().logout();
+
     emit(AuthInitialState());
   }
 

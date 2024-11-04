@@ -17,9 +17,11 @@ class HomeView extends StatelessWidget {
         title: const Text('Home View'),
         actions: [
           IconButton(
-            onPressed: () {
-              context.read<AuthBloc>().add(AuthLogout());
-              Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+            onPressed: () async {
+              Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false)
+                  .then((value) {
+                context.read<AuthBloc>().add(AuthLogout());
+              });
             },
             icon: const Icon(Icons.logout),
           ),
