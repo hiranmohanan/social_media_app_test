@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "339478890338",
+    "project_id": "socialproject-2a31b",
+    "storage_bucket": "socialproject-2a31b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339478890338:android:37039b1bb4e0ce2f6d4e3b",
+        "android_client_info": {
+          "package_name": "com.hiran.social"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK0jYYiJ8AAzanQ_aR2L2CUlUWO5VdywE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
