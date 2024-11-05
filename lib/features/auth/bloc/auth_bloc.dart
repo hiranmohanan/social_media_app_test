@@ -23,11 +23,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     final action = await FireAuthService().checkUser();
     if (action is String) {
-      emit(AuthFailureState(errorMessage: action.toString()));
-      return;
+      emit(AuthLoginState(
+        emailController: emailController,
+        passwordController: passwordController,
+        isObsecure: event.isObsecure,
+      ));
     } else if (action is User) {
       emit(AuthSuccessState());
-      return;
     }
 
     _clearController();
@@ -72,8 +74,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(AuthSuccessState());
     } else if (responce is String) {
       emit(AuthFailureState(errorMessage: responce.toString()));
-    } else {
-      emit(AuthFailureState(errorMessage: 'Something went wrong'));
     }
   }
 
